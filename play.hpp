@@ -8,7 +8,7 @@
 
 #include "Chooser.hpp"
 #include "Guesser.hpp"
-#include "calculate.hpp"
+
 
 namespace bullpgia {
 	/**
