@@ -17,7 +17,7 @@
 //General idea:keeping in a list called possibleAns which holds all possible answers ,starting eliminating the list
 //bu using calculateBullAndPgia.
 //using 5 guesses algorithm by knuth.
-list <string> possibleAns;
+
 std::string SmartGuesser::guess() {
     numIn++;
     if(numIn==1) {
