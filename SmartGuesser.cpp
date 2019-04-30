@@ -35,7 +35,7 @@ std::string SmartGuesser::guess() {
         numLen++;
         //building the possibleAnswers only once!
         if(numLen==1) {
-            possibleAns.clear();
+            
             for (int d1 = 0; d1 < 10; d1++)
                     possibleAns.push_back(to_string(d1));
         }
@@ -62,7 +62,7 @@ std::string SmartGuesser::guess() {
     if(this->length==2) {
         numLen++;
         if(numLen==1) {
-            possibleAns.clear();
+            
             for (int d1 = 0; d1 < 10; d1++) {
                 for (int d2 = 0; d2 < 10; d2++) {
                         possibleAns.push_back(to_string(d1) + to_string(d2));
@@ -92,7 +92,7 @@ std::string SmartGuesser::guess() {
         numLen++;
 
         if(numLen==1) {
-            possibleAns.clear();
+            
             for (int d1 = 0; d1 < 10; d1++) {
                 for (int d2 = 0; d2 < 10; d2++) {
                     for (int d3 = 0; d3 < 10; d3++) {
@@ -126,7 +126,7 @@ std::string SmartGuesser::guess() {
         numLen++;
 
   if(numLen==1) {
-      possibleAns.clear();
+      
       for (int d1 = 0; d1 < 10; d1++) {
           for (int d2 = 0; d2 < 10; d2++) {
               for (int d3 = 0; d3 < 10; d3++) {
