@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string>
 #include <iostream>
-
+#include <list>
+//#include "calculate.hpp"
 
 typedef unsigned int uint;
 using namespace std;
@@ -15,6 +16,7 @@ using namespace std;
         string answer; //for knowing the result of the guess.
         int numIn=0;   //for knowing the times the function has been called.
         int numLen=0;  //for knowing number of guesses.
+        list <string> possibleAns;
         string previous="";
      public:
      virtual std::string guess(){};
@@ -27,6 +29,7 @@ using namespace std;
          numLen=0;
          numIn=0;
          previous="";
+         possibleAns.clear();
      }
      void learn(string b){
          answer=b;
