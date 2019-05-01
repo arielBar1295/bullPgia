@@ -54,18 +54,25 @@ std::string SmartGuesser::guess() {
         numLen++;
         //building the possibleAnswers only once!
         if(numLen==1) {
-            
-            for (int d1 = 0; d1 < 10; d1++)
-                    possibleAns.push_back(to_string(d1));
+
+            for (int d1 = 0; d1 < 10; d1++) {
+                string str = to_string(d1);
+                if (calculateBullAndPgia(str, previous) == answer) {
+                    possibleAns.push_back(str);
+                }
+            }
         }
         //eliminating
-        for (list<string>::iterator i = possibleAns.begin(); i != possibleAns.end(); i++) {
-            string token = *i;
-            if (calculateBullAndPgia(token, previous) != answer) {
-                possibleAns.remove(*i--);
+        if(numLen>1) {
+            for (list<string>::iterator i = possibleAns.begin(); i != possibleAns.end(); i++) {
+                string token = *i;
+                if (calculateBullAndPgia(token, previous) != answer) {
+                    possibleAns.remove(*i--);
+                }
             }
         }
         //choose randomly from what is left in possibleAns
+
         srand( time(0) );
         int maxRand=possibleAns.size();
         int r = rand()%maxRand;
@@ -84,15 +91,19 @@ std::string SmartGuesser::guess() {
             
             for (int d1 = 0; d1 < 10; d1++) {
                 for (int d2 = 0; d2 < 10; d2++) {
-                        possibleAns.push_back(to_string(d1) + to_string(d2));
+                    string str=to_string(d1) + to_string(d2);
+                    if  (calculateBullAndPgia(str,previous) == answer){
+                        possibleAns.push_back(str);
+                    }
                     }
             }
         }
-        for (list<string>::iterator i = possibleAns.begin(); i != possibleAns.end(); i++)
-        {
-            string token =*i;
-            if (calculateBullAndPgia(token,previous) != answer) {
-                possibleAns.remove(*i--);
+        if(numLen>1) {
+            for (list<string>::iterator i = possibleAns.begin(); i != possibleAns.end(); i++) {
+                string token = *i;
+                if (calculateBullAndPgia(token, previous) != answer) {
+                    possibleAns.remove(*i--);
+                }
             }
         }
         srand( time(0) );
@@ -115,20 +126,23 @@ std::string SmartGuesser::guess() {
             for (int d1 = 0; d1 < 10; d1++) {
                 for (int d2 = 0; d2 < 10; d2++) {
                     for (int d3 = 0; d3 < 10; d3++) {
-                        possibleAns.push_back(to_string(d1) + to_string(d2) +
-                                              to_string(d3));
+                        string str=to_string(d1) + to_string(d2) +
+                                   to_string(d3);
+                        if  (calculateBullAndPgia(str,previous) == answer){
+                            possibleAns.push_back(str);
+                        }
                     }
                 }
             }
         }
-
-        for (list<string>::iterator i = possibleAns.begin(); i != possibleAns.end(); i++)
-        {
-            string token =*i;
-            if (calculateBullAndPgia(token,previous) != answer) {
-                possibleAns.remove(*i--);
-            }
-        }
+     if(numLen>1) {
+         for (list<string>::iterator i = possibleAns.begin(); i != possibleAns.end(); i++) {
+             string token = *i;
+             if (calculateBullAndPgia(token, previous) != answer) {
+                 possibleAns.remove(*i--);
+             }
+         }
+     }
         srand( time(0) );
         int maxRand=possibleAns.size();
         int nextGuess=rand()%maxRand ;
@@ -150,21 +164,25 @@ std::string SmartGuesser::guess() {
           for (int d2 = 0; d2 < 10; d2++) {
               for (int d3 = 0; d3 < 10; d3++) {
                   for (int d4 = 0; d4 < 10; d4++) {
-                      possibleAns.push_back(to_string(d1) + to_string(d2) +
-                                       to_string(d3) + to_string(d4));
+                      string str=to_string(d1) + to_string(d2) +
+                                 to_string(d3) + to_string(d4);
+                      if  (calculateBullAndPgia(str,previous) == answer){
+                          possibleAns.push_back(str);
+                      }
+
                   }
               }
           }
       }
   }
-
-        for (list<string>::iterator i = possibleAns.begin(); i != possibleAns.end(); i++)
-        {
-            string token =*i;
-            if (calculateBullAndPgia(token,previous) != answer) {
-                 possibleAns.remove(*i--);
-            }
-        }
+      if(numLen>1) {
+          for (list<string>::iterator i = possibleAns.begin(); i != possibleAns.end(); i++) {
+              string token = *i;
+              if (calculateBullAndPgia(token, previous) != answer) {
+                  possibleAns.remove(*i--);
+              }
+          }
+      }
         srand( time(0) );
         int maxRand=possibleAns.size();
         int nextGuess=rand()%maxRand ;
