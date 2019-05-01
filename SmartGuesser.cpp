@@ -21,15 +21,8 @@
 std::string SmartGuesser::guess() {
     numIn++;
     if(numIn==1) {
-        //create a randomize first guess.
-//         srand(time(0));
         string first = "";
-//         for (int i = 0; i < length; i++) {
-//             int r = rand() % 10;
-//             first += to_string(r);
-//         }
-//         previous = first;
-//         return first;
+
          if(length==1){
             first="1";
             
@@ -67,7 +60,7 @@ std::string SmartGuesser::guess() {
             for (list<string>::iterator i = possibleAns.begin(); i != possibleAns.end(); i++) {
                 string token = *i;
                 if (calculateBullAndPgia(token, previous) != answer) {
-                    possibleAns.remove(*i--);
+                    possibleAns.erase(i--);
                 }
             }
         }
@@ -102,7 +95,7 @@ std::string SmartGuesser::guess() {
             for (list<string>::iterator i = possibleAns.begin(); i != possibleAns.end(); i++) {
                 string token = *i;
                 if (calculateBullAndPgia(token, previous) != answer) {
-                    possibleAns.remove(*i--);
+                    possibleAns.erase(i--);
                 }
             }
         }
@@ -139,7 +132,7 @@ std::string SmartGuesser::guess() {
          for (list<string>::iterator i = possibleAns.begin(); i != possibleAns.end(); i++) {
              string token = *i;
              if (calculateBullAndPgia(token, previous) != answer) {
-                 possibleAns.remove(*i--);
+                 possibleAns.erase(i--);
              }
          }
      }
@@ -179,7 +172,7 @@ std::string SmartGuesser::guess() {
           for (list<string>::iterator i = possibleAns.begin(); i != possibleAns.end(); i++) {
               string token = *i;
               if (calculateBullAndPgia(token, previous) != answer) {
-                  possibleAns.remove(*i--);
+                  possibleAns.erase(i--);
               }
           }
       }
