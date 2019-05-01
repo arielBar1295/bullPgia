@@ -23,7 +23,7 @@ std::string SmartGuesser::guess() {
     if(numIn==1) {
         //create a randomize first guess.
 //         srand(time(0));
-//         string first = "";
+        string first = "";
 //         for (int i = 0; i < length; i++) {
 //             int r = rand() % 10;
 //             first += to_string(r);
