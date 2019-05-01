@@ -43,12 +43,12 @@ int main() {
 		.CHECK_EQUAL(play(c12345, g1234, 4, 100), 0)     // chooser loses technically by choosing an illegal number (too long).
 		;
 
-// 		testcase.setname("Play with smart guesser");
-// 		RandomChooser randy;
-// 		SmartGuesser smarty;
-// // 	   for (uint i=0; i<100;i++){
-// // 			testcase.CHECK_EQUAL(play(randy, smarty,4, 100)<=100, true);  // smarty should always win in at most 10 turns!
-// // 		}
+		testcase.setname("Play with smart guesser");
+		RandomChooser randy;
+		SmartGuesser smarty;
+ 	   for (uint i=0; i<100;i++){
+			testcase.CHECK_EQUAL(play(randy, smarty,4, 100)<=100, true);  // smarty should always win in at most 10 turns!
+		}
 		//my tests.
 		 testcase.setname("testing function calculateBullAndPgis")
 		.CHECK_OUTPUT(calculateBullAndPgia("9999","9991"), "3,0")      // 4 bull, 0 pgia
