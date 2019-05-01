@@ -32,7 +32,7 @@ string calculateBullAndPgia(string choice,string guess){
                     if (choice[k] == guess[i] && k == i && was[k] == false) {
                         secIn = true;
                         index = k;
-                        was[k] == true;
+                        was[k] = true;
                     }
 
                 }
