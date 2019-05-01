@@ -22,12 +22,31 @@ std::string SmartGuesser::guess() {
     numIn++;
     if(numIn==1) {
         //create a randomize first guess.
-        srand(time(0));
-        string first = "";
-        for (int i = 0; i < length; i++) {
-            int r = rand() % 10;
-            first += to_string(r);
+//         srand(time(0));
+//         string first = "";
+//         for (int i = 0; i < length; i++) {
+//             int r = rand() % 10;
+//             first += to_string(r);
+//         }
+//         previous = first;
+//         return first;
+         if(length==1){
+            first="1";
+            
         }
+        if(length==2){
+            first="12";
+
+        }
+        if(length==3){
+            first="112";
+
+        }
+        if(length==4){
+            first="1122";
+
+        }
+        
         previous = first;
         return first;
     }
