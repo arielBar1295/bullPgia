@@ -9,7 +9,7 @@ string calculateBullAndPgia(string choice,string guess){
     if(choice.length()!=guess.length()){
         throw "Error";
     }
-    cout<<"hello"<<endl;
+    
     int len=guess.length();
     int b=0;
     int co=0;
