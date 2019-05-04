@@ -14,7 +14,7 @@ string calculateBullAndPgia(string choice,string guess){
     int co=0;
     char g[10]; //for holding the guess.
     char c[10]; //for holding the choice.
-    bool was[len];  //an array in order to know whether the specific number is already been checked.
+    bool was[10];  //an array in order to know whether the specific number is already been checked.
  //initializing the array .
     for(int i=0;i<len;i++){
         was[i]=false;
