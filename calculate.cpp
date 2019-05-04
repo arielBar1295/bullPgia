@@ -12,11 +12,11 @@ string calculateBullAndPgia(string choice,string guess){
     int len=guess.length();
     int b=0;
     int co=0;
-    char g[10]; //for holding the guess.
-    char c[10]; //for holding the choice.
-    bool was[10];  //an array in order to know whether the specific number is already been checked.
+    char g[len]; //for holding the guess.
+    char c[len]; //for holding the choice.
+    bool was[len];  //an array in order to know whether the specific number is already been checked.
  //initializing the array .
-    for(int i=0;i<10;i++){
+    for(int i=0;i<len;i++){
         was[i]=false;
     }
     //removing the guess and choice to arrays.
