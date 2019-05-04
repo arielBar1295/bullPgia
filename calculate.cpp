@@ -28,6 +28,7 @@ string calculateBullAndPgia(string choice,string guess){
         for(int j=0;j<len;j++){
             if(choice[j]==guess[i]) {
                 //for checking if exists another same number in the choice .
+                if(j!=len){
                 for (int k = j + 1; k < len; k++) {
                     if (choice[k] == guess[i] && k == i && was[k] == false) {
                         secIn = true;
@@ -35,6 +36,7 @@ string calculateBullAndPgia(string choice,string guess){
                         was[k] = true;
                     }
 
+                }
                 }
                 if (secIn) {
                     b++;
