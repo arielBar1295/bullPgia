@@ -6,9 +6,9 @@ using namespace std;
 #include<string.h>
 #include<stdio.h>
 string calculateBullAndPgia(string choice,string guess){
-//     if(choice.length()!=guess.length()){
-//         throw "Error";
-//     }
+    if(choice.length()!=guess.length()){
+        throw "Error";
+    }
     
     int len=guess.length();
     int b=0;
