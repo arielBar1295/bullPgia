@@ -25,10 +25,10 @@ string calculateBullAndPgia(string choice,string guess){
     strcpy(c,choice.c_str());
     bool secIn=false;
     bool secIn1=false;
-     for(int i=0;i<len;i++){
+     for(int i=0;i<guess.length;i++){
          secIn=false;
          secIn1=false;
-        for(int j=0;j<len;j++){
+        for(int j=0;j<choice.length();j++){
             if(choice[j]==guess[i]) {
                 //for checking if exists another same number in the choice .
                 for (int k = i + 1; k < len; k++) {
