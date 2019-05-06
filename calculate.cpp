@@ -25,7 +25,7 @@ string calculateBullAndPgia(string choice,string guess){
     strcpy(c,choice.c_str());
     bool secIn=false;
     bool secIn1=false;
-     for(int i=0;i<guess.length;i++){
+     for(int i=0;i<guess.length();i++){
          secIn=false;
          secIn1=false;
         for(int j=0;j<choice.length();j++){
